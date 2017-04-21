@@ -13,10 +13,13 @@ int main(int argc, char **argv) {
 
   screen s;
   struct matrix * edges;
-  struct matrix * transform;
+  // struct matrix * transform;
+  struct stack * transform;
 
   edges = new_matrix(4, 4);
-  transform = new_matrix(4, 4);
+  // transform = new_matrix(4, 4);
+  transform = new_stack();
+
 
   /* print_matrix( make_bezier() ); */
   /* printf("\n"); */
@@ -27,7 +30,7 @@ int main(int argc, char **argv) {
   else
     parse_file( "stdin", transform, edges, s );
 
-  
+
   free_matrix( edges );
   free_matrix( transform );
-}  
+}
