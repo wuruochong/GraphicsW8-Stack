@@ -4,9 +4,9 @@
 #include "stack.h"
 
 /*======== struct stack * new_stack()) ==========
-  Inputs:   
-  Returns: 
-  
+  Inputs:
+  Returns:
+
   Creates a new stack and puts an identity
   matrix at the top.
   ====================*/
@@ -16,7 +16,7 @@ struct stack * new_stack() {
   struct matrix **m;
   struct matrix *i;
   s = (struct stack *)malloc(sizeof(struct stack));
-  
+
   m = (struct matrix **)malloc( STACK_SIZE * sizeof(struct matrix *));
   i = new_matrix(4, 4);
   ident( i );
@@ -30,8 +30,8 @@ struct stack * new_stack() {
 }
 
 /*======== void push() ==========
-  Inputs:   struct stack *s  
-  Returns: 
+  Inputs:   struct stack *s
+  Returns:
 
   Puts a new matrix on top of s
   The new matrix should be a copy of the curent
@@ -41,7 +41,7 @@ void push( struct stack *s ) {
 
   struct matrix *m;
   m = new_matrix(4, 4);
-  
+
   if ( s->top == s->size - 1 ) {
     s->data = (struct matrix **)realloc( s->data, (s->size + STACK_SIZE)
 					 * sizeof(struct matrix *));
@@ -49,15 +49,17 @@ void push( struct stack *s ) {
   }
 
   copy_matrix( s->data[ s->top ], m);
+  // printf("matrix m\n");
+  // print_matrix(m);
 
   s->top++;
-  s->data[ s->top ] = m;  
+  s->data[ s->top ] = m;
 }
 
 /*======== void pop() ==========
-  Inputs:   struct stack * s 
-  Returns: 
-  
+  Inputs:   struct stack * s
+  Returns:
+
   Remove and free the matrix at the top
   Note you do not need to return anything.
   ====================*/
@@ -68,8 +70,8 @@ void pop( struct stack * s) {
 }
 
 /*======== void free_stack() ==========
-  Inputs:   struct stack *s 
-  Returns: 
+  Inputs:   struct stack *s
+  Returns:
 
   Deallocate all the memory used in the stack
   ====================*/

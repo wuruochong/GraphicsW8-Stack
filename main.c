@@ -25,8 +25,8 @@ int main(int argc, char **argv) {
   /* print_matrix( make_bezier() ); */
   /* printf("\n"); */
   /* print_matrix( make_hermite() ); */
-  printf("stack at start\n");
-  print_stack(transform);
+  // printf("stack at start\n");
+  // print_stack(transform);
 
   if ( argc == 2 )
     parse_file( argv[1], transform, edges, s );

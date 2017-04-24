@@ -100,9 +100,9 @@ void parse_file ( char * filename,
 
     if ( strncmp(line, "push", strlen(line)) ==0 ) {
       push(transform);
-      ident(transform->data[transform->top]);
-      printf("stack after push done\n");
-      print_stack(transform);
+      // ident(transform->data[transform->top]);
+      // printf("stack after push done\n");
+      // print_stack(transform);
     }
 
     else if ( strncmp(line, "pop", strlen(line)) == 0) {
@@ -221,12 +221,12 @@ void parse_file ( char * filename,
 	     xvals, yvals, zvals);
       /* printf("%lf %lf %lf\n", */
       /* 	xvals[0], yvals[0], zvals[0]); */
-      printf("stack before move\n");
-      print_stack(transform);
+      // printf("stack before move\n");
+      // print_stack(transform);
       tmp = make_translate( xvals[0], yvals[0], zvals[0]);
       matrix_mult(tmp, transform->data[transform->top]);
-      printf("stack after move\n");
-      print_stack(transform);
+      // printf("stack after move\n");
+      // print_stack(transform);
     }//end translate
 
     else if ( strncmp(line, "rotate", strlen(line)) == 0 ) {
