@@ -8,6 +8,7 @@
 #include "draw.h"
 #include "matrix.h"
 #include "parser.h"
+#include "stack.h"
 
 int main(int argc, char **argv) {
 
@@ -24,6 +25,8 @@ int main(int argc, char **argv) {
   /* print_matrix( make_bezier() ); */
   /* printf("\n"); */
   /* print_matrix( make_hermite() ); */
+  printf("stack at start\n");
+  print_stack(transform);
 
   if ( argc == 2 )
     parse_file( argv[1], transform, edges, s );
@@ -32,5 +35,5 @@ int main(int argc, char **argv) {
 
 
   free_matrix( edges );
-  free_matrix( transform );
+  free_stack( transform );
 }
