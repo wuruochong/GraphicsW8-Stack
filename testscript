@@ -1,11 +1,13 @@
 push
 move
 250 250 0
-line
-0 0 0 150 150 0
+sphere
+0 0 0 50
 push
 move
--250 -250 0
-line
-0 0 0 100 100 0
+-100 -100 0
+rotate
+y 20
+box
+0 0 0 50 50 50
 display
