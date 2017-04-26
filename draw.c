@@ -96,8 +96,8 @@ void draw_polygons( struct matrix *polygons, screen s, color c ) {
   add the points for a rectagular prism whose
   upper-left corner is (x, y, z) with width,
   height and depth dimensions.
-  ====================*/
-/*void add_box( struct matrix * edges,    			OLD
+  ====================*/ /*
+void add_box( struct matrix * edges,    			OLD
 	      double x, double y, double z,
 	      double width, double height, double depth ) {
 
