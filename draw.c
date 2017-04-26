@@ -97,7 +97,7 @@ void draw_polygons( struct matrix *polygons, screen s, color c ) {
   upper-left corner is (x, y, z) with width,
   height and depth dimensions.
   ====================*/
-void add_box( struct matrix * edges,
+/*void add_box( struct matrix * edges,    			OLD
 	      double x, double y, double z,
 	      double width, double height, double depth ) {
 
@@ -120,19 +120,26 @@ void add_box( struct matrix * edges,
 	add_polygon(edges, x0, y0, z1, x0, y0, z0, x1, y0, z0);
 	add_polygon(edges, x0, y1, z1, x1, y1, z1, x1, y1, z0);
 	add_polygon(edges, x0, y1, z1, x0, y1, z0, x1, y1, z0);
+} */
 
-	//front
-	/*
-  add_edge(edges, x0, y0, z0, x0+2, y0+2, z0+2);
-  add_edge(edges, x1, y0, z0, x1+2, y0+2, z0+2);
-  add_edge(edges, x1, y1, z0, x1+2, y1+2, z0+2);
-  add_edge(edges, x0, y1, z0, x0+2, y1+2, z0+2); */
-  //back
-	/*
-  add_edge(edges, x0, y0, z1, x0+2, y0+2, z1+2);
-  add_edge(edges, x1, y0, z1, x1+2, y0+2, z1+2);
-  add_edge(edges, x1, y1, z1, x1+2, y1+2, z1+2);
-  add_edge(edges, x0, y1, z1, x0+2, y1+2, z1+2);  */
+void add_box(struct matrix * edges, double x, double y, double z, double width, double height, double depth){
+		double x1, y1, z1;
+		x1 = x + width;
+    y1 = y - height;
+    z1 = z - depth;
+
+    add_polygon(edges,x,y,z,x,y1,z,x1,y1,z);
+    add_polygon(edges,x1,y1,z,x1,y,z,x,y,z);
+    add_polygon(edges,x1,y,z,x1,y1,z,x1,y1,z1);
+    add_polygon(edges,x1,y1,z1,x1,y,z1,x1,y,z);
+    add_polygon(edges,x1,y,z1,x1,y1,z1,x,y1,z1);
+    add_polygon(edges,x,y1,z1,x,y,z1,x1,y,z1);
+    add_polygon(edges,x,y,z1,x,y1,z1,x,y1,z);
+    add_polygon(edges,x,y1,z,x,y,z,x,y,z1);
+    add_polygon(edges,x,y,z1,x,y,z,x1,y,z);
+    add_polygon(edges,x1,y,z,x1,y,z1,x,y,z1);
+    add_polygon(edges,x1,y1,z1,x1,y1,z,x,y1,z);
+    add_polygon(edges,x,y1,z,x,y1,z1,x1,y1,z1);
 }
 
 /*======== void add_sphere() ==========
