@@ -60,7 +60,7 @@ void draw_polygons( struct matrix *polygons, screen s, color c ) {
 		bx = polygons->m[0][point+2] - polygons->m[0][point];
 		by = polygons->m[1][point+2] - polygons->m[1][point];
 		int nz = (ax*by) - (ay*bx);
-		printf("nz = %d\n",nz);
+		// printf("nz = %d\n",nz);
 		// nz = 0;
 		if(nz>=0){
 	    draw_line( polygons->m[0][point],
